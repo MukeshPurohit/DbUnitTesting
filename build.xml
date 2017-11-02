@@ -7,15 +7,15 @@
     <property name="target" value="1.8"/>
     <property name="source" value="1.8"/>
 	<property name="dbunit.format" value="flat"/>
-    <path id="db_testing.classpath">
+    <path id="DbUnitTesting.classpath">
         <pathelement location="bin"/>
-        <pathelement location="../../../../db_testing/libs/junit-4.12.jar"/>
-        <pathelement location="../../../../db_testing/libs/mysql-connector-java-6.0.6.jar"/>
-        <pathelement location="../../../../db_testing/libs/commons-io-2.5.jar"/>
-        <pathelement location="../../../../db_testing/libs/slf4j-api-1.7.25.jar"/>
-        <pathelement location="../../../../db_testing/libs/slf4j-simple-1.6.1.jar"/>
-        <pathelement location="../../../../db_testing/libs/org.apache.commons.pool.jar"/>
-        <pathelement location="../../../../db_testing/libs/dbunit-2.5.4.jar"/>
+        <pathelement location="../DbUnitTesting/libs/junit-4.12.jar"/>
+        <pathelement location="../DbUnitTesting/libs/mysql-connector-java-6.0.6.jar"/>
+        <pathelement location="../DbUnitTesting/libs/commons-io-2.5.jar"/>
+        <pathelement location="../DbUnitTesting/libs/slf4j-api-1.7.25.jar"/>
+        <pathelement location="../DbUnitTesting/libs/slf4j-simple-1.6.1.jar"/>
+        <pathelement location="../DbUnitTesting/libs/org.apache.commons.pool.jar"/>
+        <pathelement location="../DbUnitTesting/libs/dbunit-2.5.4.jar"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
@@ -35,7 +35,7 @@
         <echo message="${ant.project.name}: ${ant.file}"/>
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
             <src path="test/src"/>
-            <classpath refid="db_testing.classpath"/>
+            <classpath refid="DbUnitTesting.classpath"/>
         </javac>
     </target>
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
@@ -54,7 +54,7 @@
     </target>
     <target name="DatabaseExportSample">
         <java classname="test.DatabaseExportSample" failonerror="true" fork="yes">
-            <classpath refid="db_testing.classpath"/>
+            <classpath refid="DbUnitTesting.classpath"/>
         </java>
     </target>
     <target name="Database_Tests">
@@ -63,7 +63,7 @@
             <formatter type="xml"/>
             <test name="test.FlywayDBUnit_Tests" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
-            <classpath refid="db_testing.classpath"/>
+            <classpath refid="DbUnitTesting.classpath"/>
         </junit>
     </target>
     <target name="FlywayDBUnit_Tests">
@@ -72,7 +72,7 @@
             <formatter type="xml"/>
             <test name="test.FlywayDBUnit_Tests" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
-            <classpath refid="db_testing.classpath"/>
+            <classpath refid="DbUnitTesting.classpath"/>
         </junit>
     </target>
     <target name="FlywayDBUnit_Tests.testCheckActualvsLoaded5">
@@ -81,7 +81,7 @@
             <formatter type="xml"/>
             <test name="test.FlywayDBUnit_Tests" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
-            <classpath refid="db_testing.classpath"/>
+            <classpath refid="DbUnitTesting.classpath"/>
         </junit>
     </target>
     <target name="test">
@@ -90,7 +90,7 @@
             <formatter type="xml"/>
             <test name="test.FlywayDBUnit_Tests" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
-            <classpath refid="db_testing.classpath"/>
+            <classpath refid="DbUnitTesting.classpath"/>
         </junit>
     </target>
     <target name="junitreport">
