@@ -9,7 +9,7 @@
 	<property name="dbunit.format" value="flat"/>
     <path id="DbUnitTesting.classpath">
         <pathelement location="bin"/>
-        <pathelement location="../DbUnitTesting/libs/junit-4.12.jar"/>
+        <pathelement location="../DbUnitTesting/libs/junit.jar"/>
         <pathelement location="../DbUnitTesting/libs/mysql-connector-java-6.0.6.jar"/>
         <pathelement location="../DbUnitTesting/libs/commons-io-2.5.jar"/>
         <pathelement location="../DbUnitTesting/libs/slf4j-api-1.7.25.jar"/>
