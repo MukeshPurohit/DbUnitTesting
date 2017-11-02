@@ -9,13 +9,13 @@
 	<property name="dbunit.format" value="flat"/>
     <path id="DbUnitTesting.classpath">
         <pathelement location="bin"/>
-        <pathelement location="../DbUnitTesting/libs/junit.jar"/>
-        <pathelement location="../DbUnitTesting/libs/mysql-connector-java-6.0.6.jar"/>
-        <pathelement location="../DbUnitTesting/libs/commons-io-2.5.jar"/>
-        <pathelement location="../DbUnitTesting/libs/slf4j-api-1.7.25.jar"/>
-        <pathelement location="../DbUnitTesting/libs/slf4j-simple-1.6.1.jar"/>
-        <pathelement location="../DbUnitTesting/libs/org.apache.commons.pool.jar"/>
-        <pathelement location="../DbUnitTesting/libs/dbunit-2.5.4.jar"/>
+        <pathelement location="libs/junit.jar"/>
+        <pathelement location="libs/mysql-connector-java-6.0.6.jar"/>
+        <pathelement location="libs/commons-io-2.5.jar"/>
+        <pathelement location="libs/slf4j-api-1.7.25.jar"/>
+        <pathelement location="libs/slf4j-simple-1.6.1.jar"/>
+        <pathelement location="libs/org.apache.commons.pool.jar"/>
+        <pathelement location="libs/dbunit-2.5.4.jar"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
