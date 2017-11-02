@@ -57,7 +57,7 @@ public class FlywayDBUnit_Tests extends TestCase {
 		builder.setCaseSensitiveTableNames(false);
 		builder.setDtdMetadata(false);
 		loadedDataSet = builder
-				.build(new FileInputStream("InitialTest-data-ToBeLoaded.xml"));
+				.build(new FileInputStream("/var/lib/jenkins/workspace/DBUnitTesting/InitialTest-data-ToBeLoaded.xml"));
 		System.out.println("Exiting getDataSet() method****");
 		return loadedDataSet;
 	}
@@ -72,7 +72,7 @@ public class FlywayDBUnit_Tests extends TestCase {
 		{
 			//Export database before tests run
 			fullDataSet = connection.createDataSet();
-	        FlatXmlDataSet.write(fullDataSet, new FileOutputStream("InitialDB-State.xml"));
+	        FlatXmlDataSet.write(fullDataSet, new FileOutputStream("/var/lib/jenkins/workspace/DBUnitTesting/InitialDB-State.xml"));
 	        
 			//load tests data before testing commences
 	        DatabaseOperation.CLEAN_INSERT.execute(connection, getDataSet());
@@ -115,7 +115,7 @@ public class FlywayDBUnit_Tests extends TestCase {
 			builder.setColumnSensing(false);
 			builder.setCaseSensitiveTableNames(false);
 			builder.setDtdMetadata(false);
-	        IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new FileInputStream("InitialTest-data-ToBeLoaded.xml"));
+	        IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new FileInputStream("/var/lib/jenkins/workspace/DBUnitTesting/InitialTest-data-ToBeLoaded.xml"));
 	        ITable expectedTable = expectedDataSet.getTable("login");
 
 	        // Assert actual database table match expected table
